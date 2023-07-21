@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react"
 import { REGISTER, baseURL } from "../../Api/Api";
 import LoadingSubmit from "../../Components/Loading/Loading";
-
+import Cookie from 'cookie-universal';
 export default function Register(){
     //state
     const [form,setForm] = useState({
@@ -12,6 +12,7 @@ export default function Register(){
     });
 
     const [loading,setLoading] = useState(false);
+    const cookie = Cookie();
     const [err,setErr] = useState("");
 
     function handelChange(e){
@@ -23,9 +24,12 @@ export default function Register(){
         console.log("re");
         setLoading(true);
         try{
-            await axios.post(`${baseURL}/${REGISTER}`,form);
+            const res = await axios.post(`${baseURL}/${REGISTER}`,form);
+
+            const token = res.data.token;
+            cookie.set('e-commerc',token);
             console.log("secces");
-            window.location.pathname="/"
+            window.location.pathname="/users"
             setLoading(false)
         }
         catch(err){
