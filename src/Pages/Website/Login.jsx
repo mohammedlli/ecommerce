@@ -3,6 +3,7 @@ import { useState } from "react"
 import { LOGIN, baseURL } from "../../Api/Api";
 import LoadingSubmit from "../../Components/Loading/Loading";
 import Cookie from 'cookie-universal';
+import { Form } from "react-bootstrap";
 export default function Login(){
     //state
     const [form,setForm] = useState({
@@ -12,8 +13,6 @@ export default function Login(){
     const [loading,setLoading] = useState(false);
 
     const cookie = Cookie();
-
-
     const [err,setErr] = useState("");
     function handelChange(e){
         setForm({...form,[e.target.name]:e.target.value})
@@ -50,34 +49,38 @@ export default function Login(){
     {loading && < LoadingSubmit/>}
     <div className="container" >
         <div className="row h-100">
-        <form className="from" onSubmit={handleSubmit}>
+        <Form className="from" onSubmit={handleSubmit}>
             <div className="custem-form">
                 <h1>Login Now</h1>
-        <div className="form-control">
-            <input 
-            id="email" 
-            name="email" 
-            type="text"
-            placeholder="entar your email..."
-            value={form.email}
-            onChange={handelChange}
-            required/>
-            <label>Email</label>
+        <Form.Group 
+        
+        className="form-custom" 
+        controlId="exampleForm.ControlInput1">
+        <Form.Control 
+        name="email"
+        type="email" 
+        placeholder="name@example.com"
+        value={form.email}
+        onChange={handelChange}
+        required
+        />
+        <Form.Label>Email address</Form.Label>
+        </Form.Group>
 
-        </div>
-        <div className="form-control">
-            <input 
-            id="password" 
-            name="password" 
-            type="password"
-            placeholder="entar your password..."
-            value={form.password}
-            onChange={handelChange}
-            minLength={6}
-            required/>
-            <label>Password</label>
-            
-        </div>
+        <Form.Group 
+        className="form-custom" 
+        controlId="exampleForm.ControlInput2">
+        <Form.Control 
+        name="password"
+        type="password" 
+        placeholder="passwoard"
+        value={form.password}
+        onChange={handelChange}
+        minLength={6}
+        required
+        />
+        <Form.Label>password</Form.Label>
+        </Form.Group>
         <button className="btn btn-primary">Login</button>
         {err !== "" &&  <span className="error">{err}</span>}
         </div>
@@ -86,7 +89,7 @@ export default function Login(){
                 sign in with google
             </a>
         </div>
-        </form>
+        </Form>
         </div>
     </div>
     </>

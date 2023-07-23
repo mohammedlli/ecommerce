@@ -3,6 +3,8 @@ import { useState } from "react"
 import { REGISTER, baseURL } from "../../Api/Api";
 import LoadingSubmit from "../../Components/Loading/Loading";
 import Cookie from 'cookie-universal';
+import { Form } from "react-bootstrap";
+
 export default function Register(){
     //state
     const [form,setForm] = useState({
@@ -45,55 +47,67 @@ export default function Register(){
 
     return(
         <>
-        {loading && <LoadingSubmit/>}
-        <div className="container" >
-            <div className="row h-100">
-            <form className="from" onSubmit={handleSubmit}>
-                <div className="custem-form">
-                    <h1>Register Now</h1>
-            <div className="form-control">
-                <input 
-                id="name" 
-                name="name" 
-                type="text"
-                placeholder="entar your name..."
-                value={form.name}
-                onChange={handelChange}
-                required/>
-                <label>Name</label>
-            </div>
-            <div className="form-control">
-                <input 
-                id="email" 
-                name="email" 
-                type="text"
-                placeholder="entar your email..."
-                value={form.email}
-                onChange={handelChange}
-                required/>
-                <label>Email</label>
+    {loading && < LoadingSubmit/>}
+    <div className="container" >
+        <div className="row h-100">
+        <Form className="from" onSubmit={handleSubmit}>
+            <div className="custem-form">
+                <h1>Login Now</h1>
+                <Form.Group 
+        
+        className="form-custom" 
+        controlId="exampleForm.ControlInput1">
+        <Form.Control 
+        name="name"
+        type="text" 
+        placeholder="Enter your name"
+        value={form.name}
+        onChange={handelChange}
+        required
+        />
+        <Form.Label>Name</Form.Label>
+        </Form.Group>
 
-            </div>
-            <div className="form-control">
-                <input 
-                id="password" 
-                name="password" 
-                type="password"
-                placeholder="entar your password..."
-                value={form.password}
-                onChange={handelChange}
-                minLength={6}
-                required/>
-                <label>Password</label>
+        <Form.Group 
+        
+        className="form-custom" 
+        controlId="exampleForm.ControlInput1">
+        <Form.Control 
+        name="email"
+        type="email" 
+        placeholder="name@example.com"
+        value={form.email}
+        onChange={handelChange}
+        required
+        />
+        <Form.Label>Email address</Form.Label>
+        </Form.Group>
 
-                
-            </div>
-            <button className="btn btn-primary">Register</button>
-            {err !== "" &&  <span className="error">{err}</span>}
-            </div>
-            </form>
-            </div>
+        <Form.Group 
+        className="form-custom" 
+        controlId="exampleForm.ControlInput2">
+        <Form.Control 
+        name="password"
+        type="password" 
+        placeholder="passwoard"
+        value={form.password}
+        onChange={handelChange}
+        minLength={6}
+        required
+        />
+        <Form.Label>password</Form.Label>
+        </Form.Group>
+        <button className="btn btn-primary">Login</button>
+        {err !== "" &&  <span className="error">{err}</span>}
         </div>
-        </>
+        <div>
+            <a href={`http://127.0.0.1:8000/login-google`} >
+                sign in with google
+            </a>
+        </div>
+        </Form>
+        </div>
+    </div>
+    </>
     );
 }
