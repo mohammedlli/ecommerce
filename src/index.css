@@ -1,8 +1,10 @@
 *{
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 body{
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif !important;
 }
 .container{
   margin: 0 auto;

@@ -1,0 +1,23 @@
+.top{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    height: 70px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    padding: 0 20px;
+}
+.side{
+    position: fixed;
+    top: 70px;
+    left: 0;
+    background-color: white;
+    z-index: 1;
+    height: 100vh;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    width: 220px;
+    padding: 0 20px;
+
+}
