@@ -3,8 +3,6 @@ import { useEffect } from "react"
 import { USERS, baseURL } from "../../Api/Api"
 import Cookie from 'cookie-universal';
 import Logout from "./Logout";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers } from "@fortawesome/free-solid-svg-icons";
 export default function Users(){
     const cookie = Cookie();
     useEffect(()=>{
@@ -17,7 +15,6 @@ export default function Users(){
     },[])
     return <>
     users
-    <FontAwesomeIcon icon={faUsers} />
     <Logout/>
     </>
 }

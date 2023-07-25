@@ -6,18 +6,15 @@ import './Pages/Website/Auth.css'
 import './css/Components/alerts.css'
 import './css/Components/loading.css'
 import './css/Components/button.css'
-import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import MenuContext from './Context/MenuContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
+    <MenuContext>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+      </MenuContext>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

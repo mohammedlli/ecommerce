@@ -9,8 +9,7 @@ import Dashbord from './Pages/Dashbord/Dashbord';
 import './Pages/Dashbord/dashbord.css'
 import './Components/Dashbord/bare.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import MenuContext from './Context/MenuContext';
 function App() {
   return (
     <div className="App">
@@ -20,8 +19,8 @@ function App() {
         <Route path='/register' element={<Register/>}/>
         <Route path='/auth/google/callback' element={<GoogleCallBack/>}/>
         <Route path='/dashbord' element={<Dashbord/>}>
-        </Route>
         <Route path='users' element={<Users/>}/>
+        </Route>
       </Routes>
     </div>
   );

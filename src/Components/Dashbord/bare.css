@@ -17,7 +17,21 @@
     z-index: 1;
     height: 100vh;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
-    width: 220px;
-    padding: 0 20px;
-
 }
+.side-bar-link{
+    text-decoration: none;
+    color: #495057;
+    font-size: 18px;
+    transition: 0.3s; 
+    margin: 8px;
+    border-radius: 6px;
+}
+.side-bar-link:hover{
+    color: black;
+}
+.side .active{
+    background-color: #f2f3fe;
+    color: #038edc;
+}
+
+/* background-color: #232327; */

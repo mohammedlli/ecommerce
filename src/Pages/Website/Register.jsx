@@ -27,7 +27,6 @@ export default function Register(){
         setLoading(true);
         try{
             const res = await axios.post(`${baseURL}/${REGISTER}`,form);
-
             const token = res.data.token;
             cookie.set('e-commerc',token);
             console.log("secces");
