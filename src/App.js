@@ -9,17 +9,20 @@ import Dashbord from './Pages/Dashbord/Dashbord';
 import './Pages/Dashbord/dashbord.css'
 import './Components/Dashbord/bare.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MenuContext from './Context/MenuContext';
+import RequireAuth from './Pages/Website/RequireAuth';
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<HomePage/>}/>
-        <Route path='/login' element={<Login/>}/>
+      <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/auth/google/callback' element={<GoogleCallBack/>}/>
+
+        <Route element={<RequireAuth/>}>
+        <Route path='/' element={<HomePage/>}/>
         <Route path='/dashbord' element={<Dashbord/>}>
         <Route path='users' element={<Users/>}/>
+        </Route>
         </Route>
       </Routes>
     </div>
