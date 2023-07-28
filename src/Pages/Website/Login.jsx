@@ -32,9 +32,12 @@ export default function Login(){
             });
             const token =res.data.token 
             cookie.set('e-commerc',token);
-            console.log(res.data.token);
             setLoading(false);
-            window.location.pathname='/dashbord/users';
+            console.log(res);
+            if(res.data.user.role==="1996"){
+                window.location.pathname='/dashbord/writer'
+            }
+            else {window.location.pathname='/dashbord/users'}
         }
         catch(err){
             console.log(err);

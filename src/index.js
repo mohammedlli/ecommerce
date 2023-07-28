@@ -9,6 +9,7 @@ import './css/Components/button.css'
 import { BrowserRouter } from 'react-router-dom';
 import MenuContext from './Context/MenuContext';
 import WindowContext from './Context/WindowContext';
+import './Pages/Website/err.css'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

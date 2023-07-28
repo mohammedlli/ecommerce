@@ -15,13 +15,15 @@ export default function RequireAuth({allowedRole}){
     },[])
     const cookie = Cookie();
     const token = cookie.get("e-commerc")
+    console.log(allowedRole);
     return token ? (
         user === "" ?(
         <LoadingSubmit/>
         ): allowedRole.includes(user.role) ? (
         <Outlet/>
         ):(
-        <Err403/>
+        user.role === "2001"?
+        navigate('/') : <Err403/>
         )
         ):(
         <Navigate to={"/login"} replace={true}/>
