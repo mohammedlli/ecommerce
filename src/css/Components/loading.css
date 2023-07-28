@@ -5,11 +5,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(154,160,167,0.3);
-    top:0;
+    backdrop-filter: blur(10px);
+        top:0;
     z-index: 1;
 }
-
+/*  
+    background-color: rgba(154,160,167,0.3);
+ backdrop-filter: blur(10px);
+ */
 .spinner{
     margin: 0 10px;
     width: 50px;

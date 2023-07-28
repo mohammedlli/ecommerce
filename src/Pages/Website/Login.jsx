@@ -34,7 +34,7 @@ export default function Login(){
             cookie.set('e-commerc',token);
             console.log(res.data.token);
             setLoading(false);
-            navigate('/dashbord/users',{replace:true});
+            window.location.pathname='/dashbord/users';
         }
         catch(err){
             console.log(err);
@@ -53,10 +53,9 @@ export default function Login(){
     <div className="container" >
         <div className="row h-100">
         <Form className="from" onSubmit={handleSubmit}>
+        <h1 className="titleAuth">Login Now</h1>
             <div className="custem-form">
-                <h1>Login Now</h1>
         <Form.Group 
-        
         className="form-custom" 
         controlId="exampleForm.ControlInput1">
         <Form.Control 

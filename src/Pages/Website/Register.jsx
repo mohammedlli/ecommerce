@@ -33,7 +33,7 @@ export default function Register(){
             const token = res.data.token;
             cookie.set('e-commerc',token);
             console.log("secces");
-            navigate("/dashbord/users",{replace:true})
+            window.location.pathname='/dashbord/users';
             setLoading(false)
         }
         catch(err){
@@ -54,7 +54,7 @@ export default function Register(){
         <div className="row h-100">
         <Form className="from" onSubmit={handleSubmit}>
             <div className="custem-form">
-                <h1>Login Now</h1>
+                <h1 className="titleAuth">Login Now</h1>
                 <Form.Group 
         
         className="form-custom" 

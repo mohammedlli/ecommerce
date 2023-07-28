@@ -11,7 +11,6 @@ export default function Logout(){
             }
     }
     return<>
-    <button onClick={handlelogout}></button>
-
+    <span onClick={handlelogout}>Logout</span>
     </>
 }
