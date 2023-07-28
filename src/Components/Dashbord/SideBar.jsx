@@ -40,6 +40,13 @@ export default function SideBar(){
             <FontAwesomeIcon icon={faPlus}/>
             <p className="m-0" style={{display: isOpen? "block" : "none"}}>Add User</p>
         </NavLink>
+
+        <NavLink to={'/dashbord/writer'} 
+        style={{padding: isOpen? "10px 8px 10px 15px" :"10px 10px"}}
+        className='side-bar-link d-flex align-items-center gap-2'>
+            <FontAwesomeIcon icon={faPlus}/>
+            <p className="m-0" style={{display: isOpen? "block" : "none"}}>Writer</p>
+        </NavLink>
         </div>
     </>
 }
