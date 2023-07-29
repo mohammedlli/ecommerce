@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTShirt, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { Link} from "react-router-dom";
 import TableShow from "./Table";
-export default function Users(){
+export default function Categories(){
     const [users , setUsers] = useState([]);
     const [deleteUser , setDeleteUser] = useState(false);
     const [currentUser , setCurrentUser] = useState('');
@@ -57,39 +57,22 @@ export default function Users(){
         catch(err){
         }
     }
-    async function hanleDelete(id){
-        try{
-            const res = await Axios.delete(`${USER}/${id}`)
-        setDeleteUser((prev) => !prev);
-        }
-        catch(err){
-        }
-    }
     const headers = [
         {
-            key:"name",
-            name :"Name"
-        },
-        {   
-            key:"email",
-            name:"email"
+            name:"id"
         },
         {
-            key:"role",
-            name :"role"
-        }
+            name :"Title"
+        },
+        {   
+            name:"Image"
+        },
     ]
     return <div className="bg-white w-100 p-2">
         <div className="d-flex align-items-center justify-content-between">
         <h1>User Page</h1>
         <Link to="/dashbord/user/add" className="btn btn-primary">Add User</Link>
         </div>
-        <TableShow 
-        headers={headers} 
-        data={users} 
-        user={USER} 
-        currentUser={currentUser}
-        delete={hanleDelete}
-        />
+        <TableShow headers={headers} data={users}/>
     </div>
 }

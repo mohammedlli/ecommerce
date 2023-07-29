@@ -15,6 +15,7 @@ export default function User(){
     const navigate = useNavigate();
     const id = Number(window.location.pathname.replace("/dashbord/users/",""));
     useEffect(()=>{
+        setLodaing(true);
         Axios.get(`${USER}/${id}`)
         .then((data)=>{
             setrName(data.data.name)
@@ -22,6 +23,8 @@ export default function User(){
             setRole(data.data.role)
         })
         .then(()=>setDisable(false))
+        .catch(()=>navigate('/dashbord/users/page/404'))
+        setLodaing(false);
     },[])
     async function handleSubmit(e){
         e.preventDefault();
@@ -74,8 +77,9 @@ export default function User(){
         >
         <option disabled value="">Select Role</option>
         <option value="1995">Admin</option>
-        <option value="2001">User</option>
+        <option value="2001">User</option>  
         <option value="1996">Wtiter</option>
+        <option value="1999">Proutact</option>
         </Form.Select>
         <Form.Label>Name</Form.Label>
         </Form.Group>

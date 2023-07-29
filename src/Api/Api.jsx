@@ -3,6 +3,7 @@ export const REGISTER = "register";
 export const LOGIN = "login";
 export const USERS = "users";
 export const LOGOUT ="logout";
+export const CAT ="categories";
 export const GOOGLE_CALL_BACK ="/auth/google/callback";
 export const USER = "user";
 

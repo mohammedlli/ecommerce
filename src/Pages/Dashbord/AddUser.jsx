@@ -81,6 +81,7 @@ export default function AddUser(){
         <option value="1995">Admin</option>
         <option value="2001">User</option>
         <option value="1996">Wtiter</option>
+        <option value="1999">Proutact</option>
         </Form.Select>
         <Form.Label>Name</Form.Label>
         </Form.Group>

@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 export default function Err404(){
     
     return<>
+    <div className="container-all" >
   <div class="container">
-    <Link style={{position:"fixed",textDecoration:"none",backgroundColor:"gray",padding:"10px",color:"#FEF5DA",borderRadius:"5px"}} to={"/"}><FontAwesomeIcon icon={faArrowLeft} /><span> Go To Home Page</span></Link>
+    <Link style={{position:"fixed",top:"30px",textDecoration:"none",backgroundColor:"gray",padding:"10px",color:"#FEF5DA",borderRadius:"5px"}} to={"/"}><FontAwesomeIcon icon={faArrowLeft} /><span> Go To Home Page</span></Link>
   <div class="row">
     <div class="col-sm-12 col-md-12 mt-5 mb-5">
       <svg width="100%" height="auto" viewBox="0 0 636 324" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -323,6 +324,7 @@ export default function Err404(){
 </svg>
     </div>
   </div>
+</div>
 </div>
     </>
 }

@@ -1,5 +1,5 @@
 export default function HomePage(){
     return<>
-    <duv>home</duv>
+    <div>home</div>
     </>
 }

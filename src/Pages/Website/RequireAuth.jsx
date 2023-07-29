@@ -22,8 +22,8 @@ export default function RequireAuth({allowedRole}){
         ): allowedRole.includes(user.role) ? (
         <Outlet/>
         ):(
-        user.role === "2001"?
-        navigate('/') : <Err403/>
+        user.role === "2001"? navigate('/') :
+        user.role === "1999"? navigate('/dashbord/prutacts') :<Err403/>
         )
         ):(
         <Navigate to={"/login"} replace={true}/>
